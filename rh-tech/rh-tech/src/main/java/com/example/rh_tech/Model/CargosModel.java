@@ -16,12 +16,12 @@ import lombok.Setter;
 @Setter
 @NoArgsConstructor
 
-public class cargosModel {
+public class CargosModel {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column
+    @Column(nullable = false)
     private String nome;
 
     @Column

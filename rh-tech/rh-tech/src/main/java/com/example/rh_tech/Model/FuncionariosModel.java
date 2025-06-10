@@ -1,5 +1,6 @@
 
 package com.example.rh_tech.Model;
+
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -16,33 +17,36 @@ import lombok.Setter;
 @Getter
 @Setter
 @NoArgsConstructor
-public class funcionariosModel {
+public class FuncionariosModel {
 
-    @Id
+ @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column
+    @Column(nullable = false)
     private String nome;
 
-    @Column
+    @Column(nullable = false, unique = true)
     private String email;
 
-    @Column
+    @Column(nullable = false)
+    private String senha;
+
+    @Column(nullable = false)
     private String cep;
 
-    @Column
+    @Column(nullable = false)
     private String endereco;
 
-    @Column
+    @Column(nullable = false)
     private String numero;
 
-    @Column
+    @Column(nullable = false)
     private String bairro;
 
-     @Column
+    @Column(nullable = false)
     private String cidade;
 
-    @Column
-    private String estado;  
+    @Column(nullable = false)
+    private String estado;
 }
