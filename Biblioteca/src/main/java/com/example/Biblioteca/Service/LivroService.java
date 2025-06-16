@@ -2,10 +2,8 @@ package com.example.Biblioteca.Service;
 
 import java.util.List;
 import java.util.Optional;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-
 import com.example.Biblioteca.Model.Bibliotecario;
 import com.example.Biblioteca.Model.Livro;
 import com.example.Biblioteca.Repository.BibliotecarioRepository;
@@ -34,7 +32,6 @@ public class LivroService {
             if (bibliotecario.isPresent()) {
                 livro.setBibliotecarioResponsavel(bibliotecario.get());
             } else {
-                // Handle case where librarian is not found (e.g., throw exception)
                 throw new IllegalArgumentException("Bibliotecário com ID " + bibliotecarioId + " não encontrado.");
             }
         }
@@ -43,5 +40,25 @@ public class LivroService {
 
     public void deleteLivro(Long id) {
         livroRepository.deleteById(id);
+    }
+
+    public List<Livro> listar() {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'listar'");
+    }
+
+    public Livro salvar(Livro livro) {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'salvar'");
+    }
+
+    public Object buscarPorId(Long id) {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'buscarPorId'");
+    }
+
+    public void deletar(Long id) {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'deletar'");
     }
 }

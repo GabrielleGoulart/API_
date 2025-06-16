@@ -1,8 +1,10 @@
 package com.example.Biblioteca.Service;
-import java.util.Optional;
 
+import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import com.example.Biblioteca.Model.Bibliotecario;
+import com.example.Biblioteca.Repository.BibliotecarioRepository;
 
 @Service
 public class BibliotecarioService {
@@ -14,24 +16,24 @@ public class BibliotecarioService {
         return bibliotecarioRepository.findAll();
     }
 
-    public Optional<Bibliotecario> findBibliotecarioById(Long id) {
-        return BibliotecarioRepository.findById(id);
-    }
-
     public Bibliotecario saveBibliotecario(Bibliotecario bibliotecario) {
         return bibliotecarioRepository.save(bibliotecario);
     }
 
-    public Bibliotecario updateBibliotecario(Long id, Bibliotecario bibliotecarioDetails) {
-        return BibliotecarioRepository.findById(id)
-                .map(bibliotecario -> {
-                    bibliotecario.setNome(bibliotecarioDetails.getNome());
-                    bibliotecario.setEmail(bibliotecarioDetails.getEmail());
-                    return bibliotecarioRepository.save(bibliotecario);
-                }).orElse(null); // Or throw a custom exception
+    public void deleteBibliotecario(Long id) {
+        bibliotecarioRepository.deleteById(id);
     }
 
-    public void deleteBibliotecario(Long id) {
-        BibliotecarioRepository.deleteById(id);
+    public List<Bibliotecario> listar() {
+        throw new UnsupportedOperationException("Unimplemented method 'listar'");
+    }
+
+    public void deletar(Long id) {
+        throw new UnsupportedOperationException("Unimplemented method 'deletar'");
+    }
+
+    public Object buscarPorId(Long id) {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'buscarPorId'");
     }
 }
